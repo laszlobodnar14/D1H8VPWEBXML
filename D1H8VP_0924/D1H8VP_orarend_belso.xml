@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE D1H8VP_orarend[
+        <!ELEMENT D1H8VP_orarend (ora)+>
+
+        <!ELEMENT ora (targy,idopont,helyszin,oktato,szak)>
+        <!ATTLIST ora id ID #REQUIRED>
+        <!ATTLIST ora tipus (Eloadas|Gyakorlat) #REQUIRED>
+
+        <!ELEMENT targy (#PCDATA)>
+
+        <!ELEMENT idopont (nap,tol,ig)>
+
+        <!ELEMENT nap (#PCDATA)>
+        <!ELEMENT tol (#PCDATA)>
+        <!ELEMENT ig (#PCDATA)>
+
+        <!ELEMENT helyszin (#PCDATA)>
+        <!ELEMENT oktato (#PCDATA)>
+        <!ELEMENT szak (#PCDATA)>
+        ]>
+
+<D1H8VP_orarend>
+    <ora id="o1" tipus="Eloadas">
+        <targy>Elektronika Elektrotechnika</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>III. Előadó</helyszin>
+        <oktato>Szabó Norbert</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o2" tipus="Gyakorlat">
+        <targy>Integrált Vállalati Rendszerek</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>10:00</tol>
+            <ig>12:00</ig>
+        </idopont>
+        <helyszin>Info fn/15</helyszin>
+        <oktato>Dr. Kulcsárné Forrai Mónika</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="o3" tipus="Gyakorlat">
+        <targy>Korszerű Információs Technológiák</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>Info 101</helyszin>
+        <oktato>Dr. Árvai László</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o4" tipus="Eloadas">
+        <targy>Korszerű Információs Technológiák</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>10:00</tol>
+            <ig>12:00</ig>
+        </idopont>
+        <helyszin>Info 101</helyszin>
+        <oktato>Dr. Árvai László </oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o5" tipus="Eloadas">
+        <targy>Integrált Vállalati Rendszerek</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>12:00</tol>
+            <ig>14:00</ig>
+        </idopont>
+        <helyszin>X Előadó</helyszin>
+        <oktato>Dr. Dadvandipour Samad</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o6" tipus="Eloadas">
+        <targy>Adatkezelés XML-ben</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>T050</helyszin>
+        <oktato>Dr. Kovács László</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o7" tipus="Gyakorlat">
+        <targy>Adatkezelés XML-ben</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>10:00</tol>
+            <ig>12:00</ig>
+        </idopont>
+        <helyszin>Info L103</helyszin>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o8" tipus="Gyakorlat">
+        <targy>Elektronika Elektrotechnika</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>12:00</tol>
+            <ig>14:00</ig>
+        </idopont>
+        <helyszin>A1/312</helyszin>
+        <oktato>Szabó Norbert</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+    <ora id="o9" tipus="Gyakorlat">
+        <targy>Fizika II</targy>
+        <idopont>
+            <nap>Csütörtök</nap>
+            <tol>8:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>A1/334</helyszin>
+        <oktato>Dr. Nagy Ádám</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+
+
+
+</D1H8VP_orarend>

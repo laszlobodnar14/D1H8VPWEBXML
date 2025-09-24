@@ -14,4 +14,4 @@
 <!ATTLIST szinesz nev CDATA #IMPLIED>
 
 <!ELEMENT iro EMPTY>
-<!ATTLIST iro id ID #REQURED>
+<!ATTLIST iro id ID #REQUIRED>
