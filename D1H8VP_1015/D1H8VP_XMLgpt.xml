@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EttermekRendszere>
+    <Ettermek>
+        <Etterem>
+            <Ekod>E001</Ekod>
+            <Nev>Arany Csillag Étterem</Nev>
+            <Csillag>5</Csillag>
+            <Cim>
+                <Varos>Budapest</Varos>
+                <Utca>Fő utca</Utca>
+                <Hazszam>10</Hazszam>
+            </Cim>
+
+            <Foszakacs>
+                <Fkod>F001</Fkod>
+                <Nev>Kiss András</Nev>
+                <Eletkor>45</Eletkor>
+                <Vegzettseg>Mesterszakács</Vegzettseg>
+            </Foszakacs>
+
+            <Szakacsok>
+                <Szakacs>
+                    <Szkod>S001</Szkod>
+                    <Nev>Nagy Péter</Nev>
+                    <Reszleg>Főételek</Reszleg>
+                    <Vegzettseg>Szakács OKJ</Vegzettseg>
+                </Szakacs>
+                <Szakacs>
+                    <Szkod>S002</Szkod>
+                    <Nev>Tóth Júlia</Nev>
+                    <Reszleg>Desszertek</Reszleg>
+                    <Vegzettseg>Cukrász</Vegzettseg>
+                </Szakacs>
+            </Szakacsok>
+
+            <Gyakornokok>
+                <Gyakornok>
+                    <Gykod>G001</Gykod>
+                    <Nev>Molnár Bence</Nev>
+                    <Gyakorlat>
+                        <Kezdete>2025-06-01</Kezdete>
+                        <Idotartama>3 hónap</Idotartama>
+                    </Gyakorlat>
+                    <Muszak>Délelőtti</Muszak>
+                </Gyakornok>
+                <Gyakornok>
+                    <Gykod>G002</Gykod>
+                    <Nev>Kovács Lilla</Nev>
+                    <Gyakorlat>
+                        <Kezdete>2025-07-15</Kezdete>
+                        <Idotartama>2 hónap</Idotartama>
+                    </Gyakorlat>
+                    <Muszak>Délutáni</Muszak>
+                </Gyakornok>
+            </Gyakornokok>
+
+            <Rendelesek>
+                <Rendeles>
+                    <Etel>Marhapörkölt galuskával</Etel>
+                    <Osszeg>4200</Osszeg>
+                    <Vendeg>
+                        <Vkod>V001</Vkod>
+                        <Nev>Horváth Ágnes</Nev>
+                        <Eletkor>32</Eletkor>
+                        <Cim>
+                            <Varos>Győr</Varos>
+                            <Utca>Kossuth Lajos utca</Utca>
+                            <Hazszam>5</Hazszam>
+                        </Cim>
+                    </Vendeg>
+                </Rendeles>
+                <Rendeles>
+                    <Etel>Somlói galuska</Etel>
+                    <Osszeg>1800</Osszeg>
+                    <Vendeg>
+                        <Vkod>V002</Vkod>
+                        <Nev>Szabó Dániel</Nev>
+                        <Eletkor>27</Eletkor>
+                        <Cim>
+                            <Varos>Budapest</Varos>
+                            <Utca>Andrássy út</Utca>
+                            <Hazszam>58</Hazszam>
+                        </Cim>
+                    </Vendeg>
+                </Rendeles>
+            </Rendelesek>
+        </Etterem>
+    </Ettermek>
+</EttermekRendszere>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<D1H8VPvendeglatas>
+    <Etterem ekod="e1">
+        <Csillag>4</Csillag>
+        <Cim>
+            <Varos>Budapest</Varos>
+            <Utca>Visegradi</Utca>
+            <Hazszam>13</Hazszam>
+        </Cim>
+        <Nev>Trofea</Nev>
+    </Etterem>
+
+    <Etterem ekod="e2" >
+        <Csillag>3</Csillag>
+        <Cim>
+            <Varos>Sajószentpéter</Varos>
+            <Utca>Bethlen Gábor </Utca>
+            <Hazszam>18</Hazszam>
+        </Cim>
+        <Nev>Gerendás Bistorant</Nev>
+    </Etterem>
+
+    <Foszakacs fkod="f2" e_f="e2">
+        <Nev>Mihaly Jozsef</Nev>
+        <Eletkor>32</Eletkor>
+        <Vegzettseg>Foiskola</Vegzettseg>
+        <Vegzettseg>Le Cordon Bleu</Vegzettseg>
+    </Foszakacs>
+
+    <Foszakacs fkod="f3" e_f="e3">
+        <Nev> Nagy Gergely</Nev>
+        <Eletkor> 27</Eletkor>
+        <Vegzettseg>Szakiskola</Vegzettseg>
+        <Vegzettseg>American BBQ Chef</Vegzettseg>
+    </Foszakacs>
+
+    <Szakacs szkod="sz1" e_sz="e1">
+        <Nev>Nagy Károly</Nev>
+        <Reszleg>Tesztakeszitő</Reszleg>
+        <Vegzettseg>Szakiskola</Vegzettseg>
+    </Szakacs>
+
+    <Szakacs szkod="sz2" e_sz="e2">
+        <Nev>Nagy Károly</Nev>
+        <Reszleg>Saucer</Reszleg>
+        <Vegzettseg>Szakiskola</Vegzettseg>
+        <Vegzettseg>Le Cordon Bleu</Vegzettseg>
+    </Szakacs>
+
+    <Gyakornok gykod="gy1" e_gy="e1">
+        <Nev>Kazuár Kristóf</Nev>
+        <Gyakorlat>
+            <Kezdete>2025.10.15.</Kezdete>
+            <Idotartama>3 hónap</Idotartama>
+        </Gyakorlat>
+        <Muszak>Delelott</Muszak>
+        <Muszak>Este</Muszak>
+    </Gyakornok>
+
+    <Gyakornok gykod="gy2" e_gy="e2">
+        <Nev>Nagy Adam</Nev>
+        <Gyakorlat>
+            <Kezdete>2025.10.22</Kezdete>
+            <Idotartama>2 honap</Idotartama>
+        </Gyakorlat>
+        <Muszak>Este</Muszak>
+    </Gyakornok>
+
+    <Rendeles E_R="gy1" V_R="v1">
+        <Osszeg>7800</Osszeg>
+        <Etel>Birkapörkölt</Etel>
+    </Rendeles>
+
+    <Rendeles E_R="gy2" V_R="v2">
+        <Osszeg>2400</Osszeg>
+        <Etel>Geri Burger</Etel>
+    </Rendeles>
+
+    <Vendeg vkod="v1">
+        <Cim>
+            <Varos>Budapest</Varos>
+            <Utca>Hosok tere</Utca>
+            <Hazszam>66</Hazszam>
+        </Cim>
+        <Nev>Lakatos Antonia</Nev>
+        <Eletkor>27</Eletkor>
+    </Vendeg>
+
+    <Vendeg>
+        <Cim>
+            <Varos>Kazincbarcika</Varos>
+            <Utca>Jószerencset út</Utca>
+            <Hazszam>2</Hazszam>
+        </Cim>
+        <Nev>Számos Tivadar</Nev>
+        <Eletkor>21</Eletkor>
+    </Vendeg>
+
+
+
+
+
+</D1H8VPvendeglatas>
