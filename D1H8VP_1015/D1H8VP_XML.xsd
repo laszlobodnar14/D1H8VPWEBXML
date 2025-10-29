@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="unqualified"
+           attributeFormDefault="unqualified">
+
+    <!-- Common types -->
+    <xs:complexType name="CimType">
+        <xs:sequence>
+            <xs:element name="Varos" type="xs:string"/>
+            <xs:element name="Utca" type="xs:string"/>
+            <xs:element name="Hazszam" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="CsillagTipus">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Domain types -->
+    <xs:complexType name="EtteremType">
+        <xs:sequence>
+            <xs:element name="Csillag" type="CsillagTipus"/>
+            <xs:element name="Cim" type="CimType"/>
+            <xs:element name="Nev" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="ekod" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FoszakacsType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Eletkor" type="xs:int"/>
+            <xs:element name="Vegzettseg" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="fkod" type="xs:string" use="required"/>
+        <xs:attribute name="e_f" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="SzakacsType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Reszleg" type="xs:string"/>
+            <xs:element name="Vegzettseg" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="szkod" type="xs:string" use="required"/>
+        <xs:attribute name="e_sz" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="GyakorlatType">
+        <xs:sequence>
+            <!-- Non-ISO date formats in source XML, use string -->
+            <xs:element name="Kezdete" type="xs:string"/>
+            <xs:element name="Idotartama" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GyakornokType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Gyakorlat" type="GyakorlatType"/>
+            <xs:element name="Muszak" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="gykod" type="xs:string" use="required"/>
+        <xs:attribute name="e_gy" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="RendelesType">
+        <xs:sequence>
+            <xs:element name="Osszeg" type="xs:int"/>
+            <xs:element name="Etel" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="E_R" type="xs:string" use="required"/>
+        <xs:attribute name="V_R" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="VendegType">
+        <xs:sequence>
+            <xs:element name="Cim" type="CimType"/>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Eletkor" type="xs:int"/>
+        </xs:sequence>
+        <!-- vkod missing for one Vendeg in sample, keep optional -->
+        <xs:attribute name="vkod" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!-- Global elements -->
+    <xs:element name="Etterem" type="EtteremType"/>
+    <xs:element name="Foszakacs" type="FoszakacsType"/>
+    <xs:element name="Szakacs" type="SzakacsType"/>
+    <xs:element name="Gyakornok" type="GyakornokType"/>
+    <xs:element name="Rendeles" type="RendelesType"/>
+    <xs:element name="Vendeg" type="VendegType"/>
+
+    <!-- Root element allowing interleaved records -->
+    <xs:element name="D1H8VPvendeglatas">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="Etterem"/>
+                <xs:element ref="Foszakacs"/>
+                <xs:element ref="Szakacs"/>
+                <xs:element ref="Gyakornok"/>
+                <xs:element ref="Rendeles"/>
+                <xs:element ref="Vendeg"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
