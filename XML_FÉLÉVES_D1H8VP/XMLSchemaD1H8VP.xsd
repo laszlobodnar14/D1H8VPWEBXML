@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Etterem_D1H8VP">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Pizzazo" type="PizzazoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Beszallito" type="BeszallitoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Futar" type="FutarTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Vevo" type="VevoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Bankkartya" type="BankkartyaTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Pizza" type="PizzaTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Rendeles" type="RendelesTipus" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:key name="PizzazoPK">
+            <xs:selector xpath="Pizzazo"/>
+            <xs:field xpath="@PizzazoID"/>
+        </xs:key>
+        <xs:key name="BeszallitoPK">
+            <xs:selector xpath="Beszallito"/>
+            <xs:field xpath="@BeszallitoID"/>
+        </xs:key>
+        <xs:key name="FutarPK">
+            <xs:selector xpath="Futar"/>
+            <xs:field xpath="@FutarID"/>
+        </xs:key>
+        <xs:key name="VevoPK">
+            <xs:selector xpath="Vevo"/>
+            <xs:field xpath="@VevoID"/>
+        </xs:key>
+        <xs:key name="BankkartyaPK">
+            <xs:selector xpath="Bankkartya"/>
+            <xs:field xpath="@Kartyaszam"/>
+        </xs:key>
+        <xs:key name="PizzaPK">
+            <xs:selector xpath="Pizza"/>
+            <xs:field xpath="@PizzaID"/>
+        </xs:key>
+        <xs:key name="RendelesPK">
+            <xs:selector xpath="Rendeles"/>
+            <xs:field xpath="@RendelesID"/>
+        </xs:key>
+
+        <xs:keyref name="Futar_Pizzazo_FK" refer="PizzazoPK">
+            <xs:selector xpath="Futar"/>
+            <xs:field xpath="@PizzazoID"/>
+        </xs:keyref>
+
+        <xs:keyref name="Pizza_Pizzazo_FK" refer="PizzazoPK">
+            <xs:selector xpath="Pizza"/>
+            <xs:field xpath="@PizzazoID"/>
+        </xs:keyref>
+
+        <xs:keyref name="Bankkartya_Vevo_FK" refer="VevoPK">
+            <xs:selector xpath="Bankkartya"/>
+            <xs:field xpath="@VevoID"/>
+        </xs:keyref>
+
+        <xs:keyref name="Rendeles_Vevo_FK" refer="VevoPK">
+            <xs:selector xpath="Rendeles"/>
+            <xs:field xpath="@VevoID"/>
+        </xs:keyref>
+
+        <xs:keyref name="Rendeles_Pizza_FK" refer="PizzaPK">
+            <xs:selector xpath="Rendeles"/>
+            <xs:field xpath="@PizzaID"/>
+        </xs:keyref>
+
+    </xs:element>
+
+    <xs:complexType name="CimTipus">
+        <xs:sequence>
+            <xs:element name="Varos" type="xs:string"/>
+            <xs:element name="IRSZ" type="xs:string"/>
+            <xs:element name="Utca" type="xs:string"/>
+            <xs:element name="Hazszam" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PizzazoTipus">
+        <xs:sequence>
+            <xs:element name="Nyitvatartas" type="xs:string"/>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Telefonszam" type="xs:string"/>
+            <xs:element name="Weboldal" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="BeszallitoTipus">
+        <xs:sequence>
+            <xs:element name="Elerhetoseg" type="xs:string"/>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Cim" type="CimTipus"/>
+        </xs:sequence>
+        <xs:attribute name="BeszallitoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FutarTipus">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Telefonszam" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="FutarID" type="xs:string" use="required"/>
+        <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="VevoTipus">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Telefonszam" type="xs:string"/>
+            <xs:element name="Cim" type="CimTipus"/>
+        </xs:sequence>
+        <xs:attribute name="VevoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="BankkartyaTipus">
+        <xs:sequence>
+            <xs:element name="Bank" type="xs:string"/>
+            <xs:element name="Lejarati_datum" type="xs:date"/>
+            <xs:element name="Tipus" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="Kartyaszam" type="xs:string" use="required"/>
+        <xs:attribute name="VevoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PizzaTipus">
+        <xs:sequence>
+            <xs:element name="Teljes_ar" type="xs:unsignedInt"/>
+            <xs:element name="Pizza_neve" type="xs:string"/>
+            <xs:element name="Feltetek">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Feltet" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Meretek">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Meret" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="PizzaID" type="xs:string" use="required"/>
+        <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="RendelesTipus">
+        <xs:attribute name="RendelesID" type="xs:string" use="required"/>
+        <xs:attribute name="VevoID" type="xs:string" use="required"/>
+        <xs:attribute name="PizzaID" type="xs:string" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
