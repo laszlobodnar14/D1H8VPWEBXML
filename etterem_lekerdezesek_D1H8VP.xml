@@ -1,0 +1,22 @@
+--- DOM LEKÉRDEZÉSEK (XPath NÉLKÜL) D1H8VP ---
+
+1. LEKÉRDEZÉS: Minden pizzázó neve 
+  - Miskolc Pizza
+  - Kiraly Pizzeria
+
+ 2. LEKÉRDEZÉS: Kazincbarcikai beszállítók 
+  - Beszallito1 (Kazincbarcika)
+  - Beszallito2 (Kazincbarcika)
+
+ 3. LEKÉRDEZÉS: A P1 pizzázó futárai 
+  - James Bond (ID: F1)
+  - Jack Sparrow (ID: F2)
+
+ 4. LEKÉRDEZÉS: Pizzák sajt feltéttel 
+  - Margarita
+  - Son goku
+  - Magyaros
+
+ 5. LEKÉRDEZÉS: Ki rendelt magyaros pizzát?
+  (Info: A 'Magyaros' pizza ID-ja: PIZ3)
+  - K Anna

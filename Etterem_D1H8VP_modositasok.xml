@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Etterem_D1H8VP xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XML_FÉLÉVES_D1H8VP/XMLSchemaD1H8VP.xsd">
+        
+    <Pizzazo PizzazoID="P1">
+                
+        <Nyitvatartas>10:00-22:00</Nyitvatartas>
+                
+        <Nev>Miskolc Pizza</Nev>
+                
+        <Telefonszam>06301234567</Telefonszam>
+                
+        <Weboldal>miskolcpizza.hu</Weboldal>
+            
+    </Pizzazo>
+        
+    <Pizzazo PizzazoID="P2">
+                
+        <Nyitvatartas>08:00-20:00</Nyitvatartas>
+                
+        <Nev>Kiraly Pizzeria</Nev>
+                
+        <Telefonszam>307654321</Telefonszam>
+                
+        <Weboldal>kiraly.hu</Weboldal>
+            
+    </Pizzazo>
+        
+    <Beszallito BeszallitoID="B1">
+                
+        <Elerhetoseg>info@beszal1.hu</Elerhetoseg>
+                
+        <Nev>Beszallito1</Nev>
+                
+        <Cim>
+                        
+            <Varos>Kazincbarcika</Varos>
+                        
+            <IRSZ>3700</IRSZ>
+                        
+            <Utca>Joszerencset ut</Utca>
+                        
+            <Hazszam>2</Hazszam>
+                    
+        </Cim>
+            
+    </Beszallito>
+        
+    <Beszallito BeszallitoID="B2">
+                
+        <Elerhetoseg>info@beszal2.hu</Elerhetoseg>
+                
+        <Nev>Beszallito2</Nev>
+                
+        <Cim>
+                        
+            <Varos>Kazincbarcika</Varos>
+                        
+            <IRSZ>3700</IRSZ>
+                        
+            <Utca>Dobo istvan ter</Utca>
+                        
+            <Hazszam>7</Hazszam>
+                    
+        </Cim>
+            
+    </Beszallito>
+        
+    <Futar FutarID="F1" PizzazoID="P2">
+                
+        <Nev>James Bond</Nev>
+                
+        <Telefonszam>70115452</Telefonszam>
+            
+    </Futar>
+        
+    <Futar FutarID="F2" PizzazoID="P1">
+                
+        <Nev>Jack Sparrow</Nev>
+                
+        <Telefonszam>7036534444</Telefonszam>
+            
+    </Futar>
+        
+    <Futar FutarID="F3" PizzazoID="P2">
+                
+        <Nev>Nagy Sándor</Nev>
+                
+        <Telefonszam>705543566</Telefonszam>
+            
+    </Futar>
+        
+    <Vevo VevoID="V1">
+                
+        <Nev>Vásár Ló</Nev>
+                
+        <Telefonszam>20198772</Telefonszam>
+                
+        <Cim>
+                        
+            <Varos>Kazincbarcika</Varos>
+                        
+            <IRSZ>3700</IRSZ>
+                        
+            <Utca>József attila utca</Utca>
+                        
+            <Hazszam>7</Hazszam>
+                     
+        </Cim>
+            
+        <Email>vasar.lo@email.com</Email>
+    </Vevo>
+        
+    <Vevo VevoID="V2">
+                
+        <Nev>K Anna</Nev>
+                
+        <Telefonszam>203342344</Telefonszam>
+                
+        <Cim>
+                        
+            <Varos>Miskolc</Varos>
+                        
+            <IRSZ>3700</IRSZ>
+                        
+            <Utca>Dobo utca</Utca>
+                        
+            <Hazszam>3</Hazszam>
+                    
+        </Cim>
+            
+    </Vevo>
+        
+    <Bankkartya Kartyaszam="17846573498579" VevoID="V1">
+                
+        <Bank>OTP Bank</Bank>
+                
+        <Lejarati_datum>2026-12-31</Lejarati_datum>
+                
+        <Tipus>Mastercard</Tipus>
+            
+    </Bankkartya>
+        
+
+    
+    <Pizza PizzaID="PIZ1" PizzazoID="P1">
+                
+        <Teljes_ar>2990</Teljes_ar>
+                
+        <Pizza_neve>Margarita</Pizza_neve>
+                
+        <Feltetek>
+                        
+            <Feltet>Paradicsom</Feltet>
+                        
+            <Feltet>Sajt</Feltet>
+                        
+            <Feltet>Oregeno</Feltet>
+                    
+            <Feltet>Gomba</Feltet>
+        </Feltetek>
+                
+        <Meretek>
+                        
+            <Meret>32cm</Meret>
+                    
+        </Meretek>
+            
+    </Pizza>
+        
+    <Pizza PizzaID="PIZ2" PizzazoID="P1">
+                
+        <Teljes_ar>3200</Teljes_ar>
+                
+        <Pizza_neve>Son goku</Pizza_neve>
+                
+        <Feltetek>
+                        
+            <Feltet>Paradicsom</Feltet>
+                        
+            <Feltet>Sajt</Feltet>
+                        
+            <Feltet>Sonka</Feltet>
+                        
+            <Feltet>Kukorica</Feltet>
+                    
+        </Feltetek>
+                
+        <Meretek>
+                        
+            <Meret>32cm</Meret>
+                        
+            <Meret>45cm</Meret>
+                    
+        </Meretek>
+            
+    </Pizza>
+        
+    <Pizza PizzaID="PIZ3" PizzazoID="P2">
+                
+        <Teljes_ar>3500</Teljes_ar>
+                
+        <Pizza_neve>Magyaros</Pizza_neve>
+                
+        <Feltetek>
+                        
+            <Feltet>Paradicsom</Feltet>
+                        
+            <Feltet>Sajt</Feltet>
+                        
+            <Feltet>Kolbász</Feltet>
+                        
+            <Feltet>Hagyma</Feltet>
+                        
+            <Feltet>Erős paprika</Feltet>
+                    
+        </Feltetek>
+                
+        <Meretek>
+                        
+            <Meret>30cm</Meret>
+                    
+        </Meretek>
+            
+    </Pizza>
+        
+    <Rendeles PizzaID="PIZ2" RendelesID="R1" VevoID="V1"/>
+        
+    <Rendeles PizzaID="PIZ1" RendelesID="R2" VevoID="V2"/>
+        
+    <Rendeles PizzaID="PIZ3" RendelesID="R3" VevoID="V2"/>
+    
+</Etterem_D1H8VP>

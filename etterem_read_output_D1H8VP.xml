@@ -1,0 +1,107 @@
+--- Étterem Feldolgozás (DOM) D1H8VP ---
+
+=== PIZZAZO (2 db) ===
+--------------------------------------
+Pizzázó (ID: P1)
+  Név: Miskolc Pizza
+  Nyitvatartás: 10:00-22:00
+  Telefon: 06301234567
+  Web: miskolcpizza.hu
+--------------------------------------
+Pizzázó (ID: P2)
+  Név: Kiraly Pizzeria
+  Nyitvatartás: 08:00-20:00
+  Telefon: 307654321
+  Web: kiraly.hu
+
+=== BESZALLITO (2 db) ===
+--------------------------------------
+Beszállító (ID: B1)
+  Név: Beszallito1
+  Elérhetőség: info@beszal1.hu
+  Cím: 3700 Kazincbarcika, Joszerencset ut 2
+--------------------------------------
+Beszállító (ID: B2)
+  Név: Beszallito2
+  Elérhetőség: info@beszal2.hu
+  Cím: 3700 Kazincbarcika, Dobo istvan ter 7
+
+=== FUTAR (3 db) ===
+--------------------------------------
+Futár (ID: F1)
+  Pizzázó ID: P1
+  Név: James Bond
+  Telefon: 70115452
+--------------------------------------
+Futár (ID: F2)
+  Pizzázó ID: P1
+  Név: Jack Sparrow
+  Telefon: 7036534444
+--------------------------------------
+Futár (ID: F3)
+  Pizzázó ID: P2
+  Név: Nagy Sándor
+  Telefon: 705543566
+
+=== VEVO (2 db) ===
+--------------------------------------
+Vevő (ID: V1)
+  Név: Vásár Ló
+  Telefon: 20198772
+  Cím: 3700 Kazincbarcika, József attila utca 7
+--------------------------------------
+Vevő (ID: V2)
+  Név: K Anna
+  Telefon: 203342344
+  Cím: 3700 Miskolc, Dobo utca 3
+
+=== BANKKARTYA (2 db) ===
+--------------------------------------
+Bankkártya (Szám: 17846573498579)
+  Vevő ID: V1
+  Bank: OTP Bank
+  Lejárat: 2026-12-31
+  Típus: Mastercard
+--------------------------------------
+Bankkártya (Szám: 643724683)
+  Vevő ID: V2
+  Bank: KH Bank
+  Lejárat: 2025-06-30
+  Típus: Visa
+
+=== PIZZA (3 db) ===
+--------------------------------------
+Pizza (ID: PIZ1)
+  Pizzázó ID: P1
+  Név: Margarita
+  Ár: 2800 Ft
+  Feltétek: Paradicsom, Sajt, Oregeno
+  Méretek: 32cm
+--------------------------------------
+Pizza (ID: PIZ2)
+  Pizzázó ID: P1
+  Név: Son goku
+  Ár: 3200 Ft
+  Feltétek: Paradicsom, Sajt, Sonka, Kukorica
+  Méretek: 32cm, 45cm
+--------------------------------------
+Pizza (ID: PIZ3)
+  Pizzázó ID: P2
+  Név: Magyaros
+  Ár: 3500 Ft
+  Feltétek: Paradicsom, Sajt, Kolbász, Hagyma, Erős paprika
+  Méretek: 30cm
+
+=== RENDELES (3 db) ===
+--------------------------------------
+Rendelés (ID: R1)
+  Vevő ID: V1
+  Pizza ID: PIZ2
+--------------------------------------
+Rendelés (ID: R2)
+  Vevő ID: V2
+  Pizza ID: PIZ1
+--------------------------------------
+Rendelés (ID: R3)
+  Vevő ID: V2
+  Pizza ID: PIZ3
