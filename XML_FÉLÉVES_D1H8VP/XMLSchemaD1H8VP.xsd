@@ -53,10 +53,10 @@
             <xs:field xpath="@PizzazoID"/>
         </xs:keyref>
 
-        <xs:keyref name="Bankkartya_Vevo_FK" refer="VevoPK">
+        <xs:unique name="Bankkartya_Vevo_Unique">
             <xs:selector xpath="Bankkartya"/>
             <xs:field xpath="@VevoID"/>
-        </xs:keyref>
+        </xs:unique>
 
         <xs:keyref name="Rendeles_Vevo_FK" refer="VevoPK">
             <xs:selector xpath="Rendeles"/>

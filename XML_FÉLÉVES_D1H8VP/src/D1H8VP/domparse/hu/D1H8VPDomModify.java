@@ -136,7 +136,7 @@ public class D1H8VPDomModify {
 
     //v2 kartyaszam torlese
     private static void modify5_ElemTorlese(Document doc, StringBuilder report) {
-        report.append("\n=== 5. MÓDOSÍTÁS: 'V2' vevő bankkártyájának törlése ===\n");
+        report.append("\n 5. MÓDOSÍTÁS: 'V2' vevő bankkártyájának törlése \n");
         NodeList kartyaList = doc.getElementsByTagName("Bankkartya");
 
 

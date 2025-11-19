@@ -1,0 +1,123 @@
+{
+  "D1H8VP_orarend": {
+    "ora": [
+      {
+        "id": 1,
+        "tipus": "Eloadas",
+        "targy": "Elektronika Elektrotechnika",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "8:00",
+          "ig": "10:00"
+        },
+        "helyszin": "III. Előadó",
+        "oktato": "Szabó Norbert",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 2,
+        "tipus": "Gyakorlat",
+        "targy": "Integrált Vállalati Rendszerek",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "10:00",
+          "ig": "12:00"
+        },
+        "helyszin": "Info fn/15",
+        "oktato": "Dr. Kulcsárné Forrai Mónika",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 3,
+        "tipus": "Gyakorlat",
+        "targy": "Korszerű Információs Technológiák",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "8:00",
+          "ig": "10:00"
+        },
+        "helyszin": "Info 101",
+        "oktato": "Dr. Árvai László",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 4,
+        "tipus": "Elmélet",
+        "targy": "Korszerű Információs Technológiák",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "10:00",
+          "ig": "12:00"
+        },
+        "helyszin": "Info 101",
+        "oktato": "Dr. Árvai László ",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 5,
+        "tipus": "Elmélet",
+        "targy": "Integrált Vállalati Rendszerek",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "12:00",
+          "ig": "14:00"
+        },
+        "helyszin": "X Előadó",
+        "oktato": "Dr. Dadvandipour Samad",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 6,
+        "tipus": "Elmélet",
+        "targy": "Adatkezelés XML-ben",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": "8:00",
+          "ig": "10:00"
+        },
+        "helyszin": "T050",
+        "oktato": "Dr. Kovács László",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 7,
+        "tipus": "Gyakorlat",
+        "targy": "Adatkezelés XML-ben",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": "10:00",
+          "ig": "12:00"
+        },
+        "helyszin": "Info L103",
+        "oktato": "Dr. Bednarik László",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 8,
+        "tipus": "Gyakorlat",
+        "targy": "Elektronika Elektrotechnika",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": "12:00",
+          "ig": "14:00"
+        },
+        "helyszin": "A1/312",
+        "oktato": "Szabó Norbert",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "id": 9,
+        "tipus": "Gyakorlat",
+        "targy": "Fizika II",
+        "idopont": {
+          "nap": "Csütörtök",
+          "tol": "8:00",
+          "ig": "10:00"
+        },
+        "helyszin": "A1/334",
+        "oktato": "Dr. Nagy Ádám",
+        "szak": "Mérnökinformatikus"
+      }
+    ]
+  }
+}
