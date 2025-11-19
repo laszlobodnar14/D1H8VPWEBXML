@@ -1,0 +1,105 @@
+{
+  "D1H8VP_orarend":{
+    "ora":[
+      {
+        "targy":"Elektronika Elektrotechnika",
+        "oktato":"Dr. Szabó Norbert",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"8",
+          "nap":"hétfő",
+          "ig":"10"
+        },
+        "helyszin":"E3"
+      },
+      {
+        "targy":"Integralt Vallalti rendszerek",
+        "oktato":"Kulcsárné Dr. Forrai Mónika",
+        "szak":"MernokInformatikus",
+        "idopont":{
+          "tol":"10",
+          "nap":"hétfő",
+          "ig":"12"
+        },
+        "helyszin":"Inf. 103"
+      },
+      {
+        "targy":"Korszeru Informacios Techonlogiak",
+        "oktato":"Dr. Árvai László",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"8",
+          "nap":"Kedd",
+          "ig":"10"
+        },
+        "helyszin":"Inf. 103"
+      },
+      {
+        "targy":"Korszeru Informacios Technologiak",
+        "oktato":"Dr. Árvai László",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"10",
+          "nap":"Kedd",
+          "ig":"12"
+        },
+        "helyszin":"Inf. 103"
+      },
+      {
+        "targy":"Integralt Vallalati rendszerek",
+        "oktato":"Dr. Samad Davandipuor",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"12",
+          "nap":"Kedd",
+          "ig":"14"
+        },
+        "helyszin":"E12"
+      },
+      {
+        "targy":"Adatkezelés XML-ben",
+        "oktato":"Dr. Bendarik László",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"10",
+          "nap":"Szerda",
+          "ig":"12"
+        },
+        "helyszin":"Inf. 103"
+      },
+      {
+        "targy":"Adatkezelés XML-ben",
+        "oktato":"Dr. Kovács László",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"8",
+          "nap":"Szerda",
+          "ig":"10"
+        },
+        "helyszin":"E12"
+      },
+      {
+        "targy":"Elektronika Elektrotechnika",
+        "oktato":"Dr. Szabó Norbert",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"12",
+          "nap":"Szerda",
+          "ig":"14"
+        },
+        "helyszin":"E11"
+      },
+      {
+        "targy":"Fizika II",
+        "oktato":"Dr. Nagy Ádám",
+        "szak":"Mernokinformatikus",
+        "idopont":{
+          "tol":"8",
+          "nap":"Csutortok",
+          "ig":"10"
+        },
+        "helyszin":"Fizika Könyvtár"
+      }
+    ]
+  }
+}
