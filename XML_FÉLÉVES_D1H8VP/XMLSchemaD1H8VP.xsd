@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <!--Egyszerű tipusok-->
+
     <xs:simpleType name="IrszTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="[0-9]{4}"/>
@@ -28,6 +30,8 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!--Gyokerlem-->
+
     <xs:element name="Etterem_D1H8VP">
         <xs:complexType>
             <xs:sequence>
@@ -40,6 +44,8 @@
                 <xs:element name="Rendeles" type="RendelesTipus" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
+
+        <!--Kulcsok-->
 
         <xs:key name="PizzazoPK">
             <xs:selector xpath="Pizzazo"/>
@@ -91,6 +97,8 @@
             <xs:field xpath="@PizzaID"/>
         </xs:keyref>
     </xs:element>
+
+    <!--Komplex tipusok-->
 
     <xs:complexType name="CimTipus">
         <xs:sequence>
