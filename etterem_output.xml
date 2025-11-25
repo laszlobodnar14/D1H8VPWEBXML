@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Etterem_D1H8VP xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaD1H8VP.xsd">
+    <Pizzazo PizzazoID="P1">
+        <Nyitvatartas>10:00-22:00</Nyitvatartas>
+        <Nev>Miskolc Pizza</Nev>
+        <Telefonszam>06301234567</Telefonszam>
+        <Weboldal>miskolcpizza.hu</Weboldal>
+    </Pizzazo>
+    <Beszallito BeszallitoID="B1">
+        <Elerhetoseg>info@beszal1.hu</Elerhetoseg>
+        <Nev>Beszallito1</Nev>
+        <Cim>
+            <Varos>Kazincbarcika</Varos>
+            <IRSZ>3700</IRSZ>
+            <Utca>Joszerencset ut</Utca>
+            <Hazszam>2</Hazszam>
+        </Cim>
+    </Beszallito>
+    <Futar FutarID="F1" PizzazoID="P1">
+        <Nev>James Bond</Nev>
+        <Telefonszam>70115452</Telefonszam>
+    </Futar>
+    <Vevo VevoID="V1">
+        <Nev>Vásár Ló</Nev>
+        <Telefonszam>20198772</Telefonszam>
+        <Cim>
+            <Varos>Kazincbarcika</Varos>
+            <IRSZ>3700</IRSZ>
+            <Utca>József attila utca</Utca>
+            <Hazszam>7</Hazszam>
+        </Cim>
+    </Vevo>
+    <Bankkartya Kartyaszam="17846573498579" VevoID="V1">
+        <Bank>OTP Bank</Bank>
+        <Lejarati_datum>2026-12-31</Lejarati_datum>
+        <Tipus>Mastercard</Tipus>
+    </Bankkartya>
+    <Pizza PizzaID="PIZ2" PizzazoID="P1">
+        <Teljes_ar>3200</Teljes_ar>
+        <Pizza_neve>Son goku</Pizza_neve>
+        <Feltetek>
+            <Feltet>Paradicsom</Feltet>
+            <Feltet>Sajt</Feltet>
+            <Feltet>Sonka</Feltet>
+            <Feltet>Kukorica</Feltet>
+        </Feltetek>
+        <Meretek>
+            <Meret>32cm</Meret>
+            <Meret>45cm</Meret>
+        </Meretek>
+    </Pizza>
+    <Rendeles PizzaID="PIZ2" RendelesID="R1" VevoID="V1"/>
+</Etterem_D1H8VP>

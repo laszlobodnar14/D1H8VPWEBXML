@@ -3,6 +3,8 @@
 <Etterem_D1H8VP xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
                 xs:noNamespaceSchemaLocation="XMLSchemaD1H8VP.xsd">
 
+    <!--Pizzazo-->
+
     <Pizzazo PizzazoID="P1">
         <Nyitvatartas>10:00-22:00</Nyitvatartas>
         <Nev>Miskolc Pizza</Nev>
@@ -16,6 +18,8 @@
         <Telefonszam>307654321</Telefonszam>
         <Weboldal>kiraly.hu</Weboldal>
     </Pizzazo>
+
+    <!--Beszallito-->
 
     <Beszallito BeszallitoID="B1">
         <Elerhetoseg>info@beszal1.hu</Elerhetoseg>
@@ -39,6 +43,8 @@
         </Cim>
     </Beszallito>
 
+    <!--Futar-->
+
     <Futar FutarID="F1" PizzazoID="P1">
         <Nev>James Bond</Nev>
         <Telefonszam>70115452</Telefonszam>
@@ -53,6 +59,8 @@
         <Nev>Nagy Sándor</Nev>
         <Telefonszam>705543566</Telefonszam>
     </Futar>
+
+    <!--Vevo-->
 
     <Vevo VevoID="V1">
         <Nev>Vásár Ló</Nev>
@@ -76,6 +84,8 @@
         </Cim>
     </Vevo>
 
+    <!--Bankkartya-->
+
     <Bankkartya Kartyaszam="17846573498579" VevoID="V1">
         <Bank>OTP Bank</Bank>
         <Lejarati_datum>2026-12-31</Lejarati_datum>
@@ -87,6 +97,9 @@
         <Lejarati_datum>2025-06-30</Lejarati_datum>
         <Tipus>Visa</Tipus>
     </Bankkartya>
+
+    <!--Pizza-->
+
 
     <Pizza PizzaID="PIZ1" PizzazoID="P1">
         <Teljes_ar>2800</Teljes_ar>
@@ -130,6 +143,8 @@
             <Meret>30cm</Meret>
         </Meretek>
     </Pizza>
+
+    <!--Rendeles-->
 
     <Rendeles RendelesID="R1" VevoID="V1" PizzaID="PIZ2"/>
     <Rendeles RendelesID="R2" VevoID="V2" PizzaID="PIZ1"/>

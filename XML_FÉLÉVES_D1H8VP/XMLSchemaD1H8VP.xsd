@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <xs:simpleType name="IrszTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TelefonszamTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8,15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="BankkartyaModTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Mastercard"/>
+            <xs:enumeration value="Visa"/>
+            <xs:enumeration value="Maestro"/>
+            <xs:enumeration value="American Express"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ArTipus">
+        <xs:restriction base="xs:unsignedInt">
+            <xs:minInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:element name="Etterem_D1H8VP">
         <xs:complexType>
             <xs:sequence>
@@ -47,33 +74,28 @@
             <xs:selector xpath="Futar"/>
             <xs:field xpath="@PizzazoID"/>
         </xs:keyref>
-
         <xs:keyref name="Pizza_Pizzazo_FK" refer="PizzazoPK">
             <xs:selector xpath="Pizza"/>
             <xs:field xpath="@PizzazoID"/>
         </xs:keyref>
-
         <xs:unique name="Bankkartya_Vevo_Unique">
             <xs:selector xpath="Bankkartya"/>
             <xs:field xpath="@VevoID"/>
         </xs:unique>
-
         <xs:keyref name="Rendeles_Vevo_FK" refer="VevoPK">
             <xs:selector xpath="Rendeles"/>
             <xs:field xpath="@VevoID"/>
         </xs:keyref>
-
         <xs:keyref name="Rendeles_Pizza_FK" refer="PizzaPK">
             <xs:selector xpath="Rendeles"/>
             <xs:field xpath="@PizzaID"/>
         </xs:keyref>
-
     </xs:element>
 
     <xs:complexType name="CimTipus">
         <xs:sequence>
             <xs:element name="Varos" type="xs:string"/>
-            <xs:element name="IRSZ" type="xs:string"/>
+            <xs:element name="IRSZ" type="IrszTipus"/>
             <xs:element name="Utca" type="xs:string"/>
             <xs:element name="Hazszam" type="xs:string"/>
         </xs:sequence>
@@ -83,7 +105,7 @@
         <xs:sequence>
             <xs:element name="Nyitvatartas" type="xs:string"/>
             <xs:element name="Nev" type="xs:string"/>
-            <xs:element name="Telefonszam" type="xs:string"/>
+            <xs:element name="Telefonszam" type="TelefonszamTipus"/>
             <xs:element name="Weboldal" type="xs:string"/>
         </xs:sequence>
         <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
@@ -101,7 +123,7 @@
     <xs:complexType name="FutarTipus">
         <xs:sequence>
             <xs:element name="Nev" type="xs:string"/>
-            <xs:element name="Telefonszam" type="xs:string"/>
+            <xs:element name="Telefonszam" type="TelefonszamTipus"/>
         </xs:sequence>
         <xs:attribute name="FutarID" type="xs:string" use="required"/>
         <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
@@ -110,7 +132,7 @@
     <xs:complexType name="VevoTipus">
         <xs:sequence>
             <xs:element name="Nev" type="xs:string"/>
-            <xs:element name="Telefonszam" type="xs:string"/>
+            <xs:element name="Telefonszam" type="TelefonszamTipus"/>
             <xs:element name="Cim" type="CimTipus"/>
         </xs:sequence>
         <xs:attribute name="VevoID" type="xs:string" use="required"/>
@@ -120,7 +142,7 @@
         <xs:sequence>
             <xs:element name="Bank" type="xs:string"/>
             <xs:element name="Lejarati_datum" type="xs:date"/>
-            <xs:element name="Tipus" type="xs:string"/>
+            <xs:element name="Tipus" type="BankkartyaModTipus"/>
         </xs:sequence>
         <xs:attribute name="Kartyaszam" type="xs:string" use="required"/>
         <xs:attribute name="VevoID" type="xs:string" use="required"/>
@@ -128,7 +150,7 @@
 
     <xs:complexType name="PizzaTipus">
         <xs:sequence>
-            <xs:element name="Teljes_ar" type="xs:unsignedInt"/>
+            <xs:element name="Teljes_ar" type="ArTipus"/>
             <xs:element name="Pizza_neve" type="xs:string"/>
             <xs:element name="Feltetek">
                 <xs:complexType>
