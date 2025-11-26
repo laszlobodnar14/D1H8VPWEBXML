@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Etterem_D1H8VP xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XML_FÉLÉVES_D1H8VP/XMLSchemaD1H8VP.xsd">
+<Etterem_D1H8VP xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaD1H8VP.xsd">
+        
+    <!--Pizzazo-->
         
     <Pizzazo PizzazoID="P1">
                 
@@ -24,6 +26,8 @@
         <Weboldal>kiraly.hu</Weboldal>
             
     </Pizzazo>
+        
+    <!--Beszallito-->
         
     <Beszallito BeszallitoID="B1">
                 
@@ -65,6 +69,8 @@
             
     </Beszallito>
         
+    <!--Futar-->
+        
     <Futar FutarID="F1" PizzazoID="P2">
                 
         <Nev>James Bond</Nev>
@@ -88,6 +94,8 @@
         <Telefonszam>705543566</Telefonszam>
             
     </Futar>
+        
+    <!--Vevo-->
         
     <Vevo VevoID="V1">
                 
@@ -130,6 +138,8 @@
             
     </Vevo>
         
+    <!--Bankkartya-->
+        
     <Bankkartya Kartyaszam="17846573498579" VevoID="V1">
                 
         <Bank>OTP Bank</Bank>
@@ -142,6 +152,8 @@
         
 
     
+    <!--Pizza-->
+        
     <Pizza PizzaID="PIZ1" PizzazoID="P1">
                 
         <Teljes_ar>2990</Teljes_ar>
@@ -222,6 +234,8 @@
         </Meretek>
             
     </Pizza>
+        
+    <!--Rendeles-->
         
     <Rendeles PizzaID="PIZ2" RendelesID="R1" VevoID="V1"/>
         

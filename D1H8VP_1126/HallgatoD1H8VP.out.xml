@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h2>Hallgat&oacute;k List&aacute;ja</h2>
+        <table border="1">
+            <tr bgcolor="#9acd32">
+                <th>Vezet&eacute;kn&eacute;v</th><th>Keresztn&eacute;v</th><th>Foglalkoz&aacute;s</th><th>&Ouml;szt&ouml;nd&iacute;j</th>
+            </tr>
+            <tr>
+                <td>Kiss</td><td>P&aacute;l</td><td>Web Developer</td><td>40000</td>
+            </tr>
+            <tr>
+                <td>Vigh</td><td>Piroska</td><td>Java Programozo</td><td>37000</td>
+            </tr>
+            <tr>
+                <td>Nagy</td><td>Ferenc</td><td>Associate Professor</td><td>27000</td>
+            </tr>
+        </table>
+    </body>
+</html>

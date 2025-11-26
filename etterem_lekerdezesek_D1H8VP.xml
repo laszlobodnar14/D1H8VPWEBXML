@@ -1,4 +1,4 @@
---- DOM LEKÉRDEZÉSEK (XPath NÉLKÜL) D1H8VP ---
+DOM LEKÉRDEZÉSEK D1H8VP 
 
 1. LEKÉRDEZÉS: Minden pizzázó neve 
   - Miskolc Pizza
@@ -18,5 +18,5 @@
   - Magyaros
 
  5. LEKÉRDEZÉS: Ki rendelt magyaros pizzát?
-  (Info: A 'Magyaros' pizza ID-ja: PIZ3)
+  (A magyaros pizza ID-ja: PIZ3)
   - K Anna
