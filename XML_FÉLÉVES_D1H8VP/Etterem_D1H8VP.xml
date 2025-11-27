@@ -43,21 +43,38 @@
         </Cim>
     </Beszallito>
 
-    <!--Futar-->
+    <Beszallitas BeszallitoID="B1" PizzazoID="P1">
+        <Szallitas_ideje>2023-11-20</Szallitas_ideje>
+        <Alapanyag>Liszt BL55</Alapanyag>
+        <Mennyiseg>100 kg</Mennyiseg>
+        <Ar>25000</Ar>
+    </Beszallitas>
 
+    <Beszallitas BeszallitoID="B2" PizzazoID="P2">
+        <Szallitas_ideje>2023-11-21</Szallitas_ideje>
+        <Alapanyag>Paradicsomszósz</Alapanyag>
+        <Mennyiseg>50 liter</Mennyiseg>
+        <Ar>40000</Ar>
+    </Beszallitas>
+
+
+    <!--Futar-->
     <Futar FutarID="F1" PizzazoID="P1">
         <Nev>James Bond</Nev>
         <Telefonszam>70115452</Telefonszam>
+        <Kiszallitas_modja>Aston Martin (Auto)</Kiszallitas_modja>
     </Futar>
 
     <Futar FutarID="F2" PizzazoID="P1">
         <Nev>Jack Sparrow</Nev>
         <Telefonszam>7036534444</Telefonszam>
+        <Kiszallitas_modja>Fekete Gyongy (Hajo)</Kiszallitas_modja>
     </Futar>
 
     <Futar FutarID="F3" PizzazoID="P2">
         <Nev>Nagy Sándor</Nev>
         <Telefonszam>705543566</Telefonszam>
+        <Kiszallitas_modja>Bucephalus (Lo)</Kiszallitas_modja>
     </Futar>
 
     <!--Vevo-->
@@ -70,7 +87,7 @@
             <IRSZ>3700</IRSZ>
             <Utca>József attila utca</Utca>
             <Hazszam>7</Hazszam>
-         </Cim>
+        </Cim>
     </Vevo>
 
     <Vevo VevoID="V2">
@@ -146,8 +163,22 @@
 
     <!--Rendeles-->
 
-    <Rendeles RendelesID="R1" VevoID="V1" PizzaID="PIZ2"/>
-    <Rendeles RendelesID="R2" VevoID="V2" PizzaID="PIZ1"/>
-    <Rendeles RendelesID="R3" VevoID="V2" PizzaID="PIZ3"/>
+    <Rendeles RendelesID="R1" VevoID="V1" PizzaID="PIZ2">
+        <Rendeles_ideje>2023-11-27 12:30</Rendeles_ideje>
+        <Mennyiseg>2</Mennyiseg>
+        <Rendelt_termek>Son goku</Rendelt_termek>
+    </Rendeles>
+
+    <Rendeles RendelesID="R2" VevoID="V2" PizzaID="PIZ1">
+        <Rendeles_ideje>2023-11-27 13:15</Rendeles_ideje>
+        <Mennyiseg>1</Mennyiseg>
+        <Rendelt_termek>Margarita</Rendelt_termek>
+    </Rendeles>
+
+    <Rendeles RendelesID="R3" VevoID="V2" PizzaID="PIZ3">
+        <Rendeles_ideje>2023-11-27 13:15</Rendeles_ideje>
+        <Mennyiseg>1</Mennyiseg>
+        <Rendelt_termek>Magyaros</Rendelt_termek>
+    </Rendeles>
 
 </Etterem_D1H8VP>

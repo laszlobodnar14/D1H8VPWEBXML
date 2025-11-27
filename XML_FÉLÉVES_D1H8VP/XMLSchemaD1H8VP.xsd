@@ -37,6 +37,7 @@
             <xs:sequence>
                 <xs:element name="Pizzazo" type="PizzazoTipus" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="Beszallito" type="BeszallitoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Beszallitas" type="BeszallitasTipus" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="Futar" type="FutarTipus" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="Vevo" type="VevoTipus" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="Bankkartya" type="BankkartyaTipus" minOccurs="0" maxOccurs="unbounded"/>
@@ -96,6 +97,16 @@
             <xs:selector xpath="Rendeles"/>
             <xs:field xpath="@PizzaID"/>
         </xs:keyref>
+
+        <xs:keyref name="Beszallitas_Beszallito_FK" refer="BeszallitoPK">
+            <xs:selector xpath="Beszallitas"/>
+            <xs:field xpath="@BeszallitoID"/>
+        </xs:keyref>
+        <xs:keyref name="Beszallitas_Pizzazo_FK" refer="PizzazoPK">
+            <xs:selector xpath="Beszallitas"/>
+            <xs:field xpath="@PizzazoID"/>
+        </xs:keyref>
+
     </xs:element>
 
     <!--Komplex tipusok-->
@@ -128,10 +139,22 @@
         <xs:attribute name="BeszallitoID" type="xs:string" use="required"/>
     </xs:complexType>
 
+    <xs:complexType name="BeszallitasTipus">
+        <xs:sequence>
+            <xs:element name="Szallitas_ideje" type="xs:date"/>
+            <xs:element name="Alapanyag" type="xs:string"/>
+            <xs:element name="Mennyiseg" type="xs:string"/>
+            <xs:element name="Ar" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="BeszallitoID" type="xs:string" use="required"/>
+        <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
+    </xs:complexType>
+
     <xs:complexType name="FutarTipus">
         <xs:sequence>
             <xs:element name="Nev" type="xs:string"/>
             <xs:element name="Telefonszam" type="TelefonszamTipus"/>
+            <xs:element name="Kiszallitas_modja" type="xs:string"/>
         </xs:sequence>
         <xs:attribute name="FutarID" type="xs:string" use="required"/>
         <xs:attribute name="PizzazoID" type="xs:string" use="required"/>
@@ -180,6 +203,11 @@
     </xs:complexType>
 
     <xs:complexType name="RendelesTipus">
+        <xs:sequence>
+            <xs:element name="Rendeles_ideje" type="xs:string"/>
+            <xs:element name="Mennyiseg" type="xs:integer"/>
+            <xs:element name="Rendelt_termek" type="xs:string"/>
+        </xs:sequence>
         <xs:attribute name="RendelesID" type="xs:string" use="required"/>
         <xs:attribute name="VevoID" type="xs:string" use="required"/>
         <xs:attribute name="PizzaID" type="xs:string" use="required"/>
