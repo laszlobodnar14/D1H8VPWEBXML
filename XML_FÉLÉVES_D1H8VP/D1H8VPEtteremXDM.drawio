@@ -663,7 +663,7 @@
         <mxCell id="gXQj-Q1no6JvH7UDYc25-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" value="" vertex="1">
           <mxGeometry height="140" width="60" x="-550" y="850" as="geometry" />
         </mxCell>
-        <mxCell id="gXQj-Q1no6JvH7UDYc25-4" parent="1" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#fa6800;fontColor=#000000;strokeColor=light-dark(#C73500,#000000);strokeWidth=2;" value="Pizza" vertex="1">
+        <mxCell id="gXQj-Q1no6JvH7UDYc25-4" parent="1" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=light-dark(#BD7000,#000000);strokeWidth=2;" value="Pizza" vertex="1">
           <mxGeometry height="80" width="130" x="-940" y="440" as="geometry" />
         </mxCell>
         <mxCell id="gXQj-Q1no6JvH7UDYc25-6" parent="1" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=light-dark(#BD7000,#000000);strokeWidth=2;" value="Feltetek" vertex="1">
