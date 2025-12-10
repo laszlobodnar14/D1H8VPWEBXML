@@ -4,18 +4,20 @@
     <xsl:template match="/">
         <html>
             <body>
-                <h2>Hallgatók Listája</h2>
+                <h3>Hallgatok adatai - for-each, value-of</h3>
 
                 <table border="1">
                     <tr bgcolor="#9acd32">
+                        <th>ID</th>
                         <th>Vezetéknév</th>
                         <th>Keresztnév</th>
                         <th>Foglalkozás</th>
-                        <th>Ösztöndíj</th>
+                        <th>Ösztondij</th>
                     </tr>
 
                     <xsl:for-each select="hallgatok/hallgato">
                         <tr>
+                            <td><xsl:value-of select="@id"/></td>
                             <td><xsl:value-of select="vezeteknev"/></td>
                             <td><xsl:value-of select="keresztnev"/></td>
                             <td><xsl:value-of select="foglalkozas"/></td>
