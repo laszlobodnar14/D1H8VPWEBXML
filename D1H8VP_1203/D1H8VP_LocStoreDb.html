@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallgatók Nyilvántartása</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #000;
+        }
+
+
+        .panel {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group label {
+            width: 100px;
+            font-weight: bold;
+            color: #a94442;
+        }
+
+
+        .form-group input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-width: 400px;
+        }
+
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .btn-success {
+            background-color: #5cb85c;
+        }
+        .btn-success:hover { background-color: #4cae4c; }
+
+        .btn-primary {
+            background-color: #337ab7;
+        }
+        .btn-primary:hover { background-color: #286090; }
+
+        .btn-danger {
+            background-color: #d9534f;
+        }
+        .btn-danger:hover { background-color: #c9302c; }
+
+        .btn-info {
+            background-color: #5bc0de;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+        .control-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .control-group input, .control-group select {
+            width: 100%;
+            max-width: 300px;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #fileInput {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>NEPTUNKOD Hallgatók</h1>
+
+<div class="panel">
+    <h2>Új hallgató hozzáadása</h2>
+    <form id="studentForm" onsubmit="event.preventDefault(); saveStudent();">
+        <input type="hidden" id="editIndex" value="-1">
+
+        <div class="form-group">
+            <label for="nev">Név:</label>
+            <input type="text" id="nev" required>
+        </div>
+        <div class="form-group">
+            <label for="evfolyam">Évfolyam:</label>
+            <input type="number" id="evfolyam" required>
+        </div>
+        <div class="form-group">
+            <label for="szak">Szak:</label>
+            <input type="text" id="szak" placeholder="PTI" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="pti@pti.hu" required>
+        </div>
+        <div class="form-group">
+            <label for="neptun">NEPTUN kód:</label>
+            <input type="text" id="neptun" placeholder="AAA-123" required maxlength="6">
+        </div>
+
+        <button type="submit" class="btn-success">Mentés</button>
+        <button type="button" onclick="resetForm()" style="background-color: #777;">Mégsem</button>
+    </form>
+</div>
+
+<div class="panel">
+    <div class="control-group">
+        <label>Keresés:</label>
+        <input type="text" id="searchInput" placeholder="nev" onkeyup="filterData()">
+    </div>
+
+    <div class="control-group">
+        <label>Rendezés:</label>
+        <select id="sortSelect" onchange="sortData()">
+            <option value="none">Nincs rendezés</option>
+            <option value="name_asc">Név (A-Z)</option>
+            <option value="year_asc">Évfolyam (növekvő)</option>
+        </select>
+    </div>
+
+    <div class="control-group">
+        <label>Export / Import JSON</label>
+        <button onclick="exportJSON()" class="btn-primary">Export JSON</button>
+        <br>
+        <span style="font-size: 0.9em; color: #666;">Import JSON: </span>
+        <input type="file" id="fileInput" accept=".json" onchange="importJSON(this)">
+    </div>
+</div>
+
+<h2>Hallgatók listája</h2>
+<div class="panel" style="padding: 0; border: none; box-shadow: none;">
+    <table id="studentTable">
+        <thead>
+        <tr>
+            <th>Név</th>
+            <th>Évfolyam</th>
+            <th>Szak</th>
+            <th>Email</th>
+            <th>NEPTUN</th>
+            <th>Műveletek</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+    const DB_KEY = 'neptunkod_hallgatok_db';
+    let students = [];
+
+
+    window.onload = function() {
+        if (localStorage.getItem(DB_KEY)) {
+            students = JSON.parse(localStorage.getItem(DB_KEY));
+        }
+        renderTable(students);
+    };
+
+
+    function saveToLocalStorage() {
+        localStorage.setItem(DB_KEY, JSON.stringify(students));
+    }
+
+
+    function saveStudent() {
+        const nev = document.getElementById('nev').value;
+        const evfolyam = document.getElementById('evfolyam').value;
+        const szak = document.getElementById('szak').value;
+        const email = document.getElementById('email').value;
+        const neptun = document.getElementById('neptun').value;
+        const editIndex = document.getElementById('editIndex').value;
+
+        const studentObj = {
+            nev: nev,
+            evfolyam: evfolyam,
+            szak: szak,
+            email: email,
+            neptun: neptun
+        };
+
+        if (editIndex === "-1") {
+
+            students.push(studentObj);
+        } else {
+
+            students[editIndex] = studentObj;
+            document.getElementById('editIndex').value = "-1";
+        }
+
+        saveToLocalStorage();
+        resetForm();
+        renderTable(students);
+        alert("Sikeres mentés!");
+    }
+
+
+    function deleteStudent(index) {
+        if (confirm("Biztosan törölni szeretné ezt a hallgatót?")) {
+            students.splice(index, 1);
+            saveToLocalStorage();
+            renderTable(students);
+        }
+    }
+
+
+    function editStudent(index) {
+        const student = students[index];
+        document.getElementById('nev').value = student.nev;
+        document.getElementById('evfolyam').value = student.evfolyam;
+        document.getElementById('szak').value = student.szak;
+        document.getElementById('email').value = student.email;
+        document.getElementById('neptun').value = student.neptun;
+
+
+        document.getElementById('editIndex').value = index;
+
+
+        window.scrollTo(0, 0);
+    }
+
+
+    function resetForm() {
+        document.getElementById('studentForm').reset();
+        document.getElementById('editIndex').value = "-1";
+    }
+
+
+
+    function renderTable(dataArray) {
+        const tbody = document.querySelector('#studentTable tbody');
+        tbody.innerHTML = ''; // Töröljük a jelenlegi tartalmat
+
+        dataArray.forEach((student, index) => {
+
+            const originalIndex = students.indexOf(student);
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                    <td>${student.nev}</td>
+                    <td>${student.evfolyam}</td>
+                    <td>${student.szak}</td>
+                    <td>${student.email}</td>
+                    <td>${student.neptun}</td>
+                    <td>
+                        <button class="btn-info" onclick="editStudent(${originalIndex})">Módosít</button>
+                        <button class="btn-danger" onclick="deleteStudent(${originalIndex})">Töröl</button>
+                    </td>
+                `;
+            tbody.appendChild(row);
+        });
+    }
+
+
+    function filterData() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+
+        const filtered = students.filter(s => {
+            return s.nev.toLowerCase().includes(query) ||
+                s.evfolyam.toString().includes(query) ||
+                s.szak.toLowerCase().includes(query) ||
+                s.email.toLowerCase().includes(query) ||
+                s.neptun.toLowerCase().includes(query);
+        });
+
+        renderTable(filtered);
+    }
+
+    function sortData() {
+        const sortType = document.getElementById('sortSelect').value;
+
+        let sortedStudents = [...students];
+
+        if (sortType === 'name_asc') {
+            sortedStudents.sort((a, b) => a.nev.localeCompare(b.nev));
+        } else if (sortType === 'year_asc') {
+            sortedStudents.sort((a, b) => a.evfolyam - b.evfolyam);
+        }
+
+
+
+
+        renderTable(sortedStudents);
+    }
+
+
+    function exportJSON() {
+        const dataStr = JSON.stringify(students, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "hallgatok_db.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function importJSON(inputElement) {
+        const file = inputElement.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const json = JSON.parse(e.target.result);
+                if (Array.isArray(json)) {
+                    students = json;
+                    saveToLocalStorage();
+                    renderTable(students);
+                    alert("Sikeres importálás!");
+                } else {
+                    alert("Hibás JSON formátum (nem tömb)!");
+                }
+            } catch (err) {
+                alert("Hiba a fájl olvasásakor: " + err.message);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+</script>
+</body>
+</html>
